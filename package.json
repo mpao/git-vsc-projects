@@ -3,6 +3,7 @@
   "displayName": "Git Projects Welcome",
   "description": "A welcome page listing git projects from configured directories",
   "version": "0.0.1",
+  "publisher": "marco",
   "engines": {
     "vscode": "^1.109.0"
   },
@@ -13,68 +14,9 @@
     "onStartupFinished"
   ],
   "main": "./out/extension.js",
-  "contributes": {
-    "viewsWelcome": [
-      {
-        "view": "explorer",
-        "contents": "Welcome to Git Projects!\n\n[Refresh Projects](command:git-projects-welcome.refreshProjects)\n\nConfigure repository directories in settings.",
-        "when": "true"
-      }
-    ],
-    "commands": [
-      {
-        "command": "git-projects-welcome.openPanel",
-        "title": "Open Git Projects Panel"
-      },
-      {
-        "command": "git-projects-welcome.refreshProjects",
-        "title": "Refresh Git Projects"
-      },
-      {
-        "command": "git-projects-welcome.openProject",
-        "title": "Open Git Project"
-      }
-    ],
-    "configuration": {
-      "title": "Git Projects Welcome",
-      "properties": {
-        "gitProjectsWelcome.repositoryDirectories": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [],
-          "description": "Array of directories to scan for git repositories"
-        },
-        "gitProjectsWelcome.maxDepth": {
-          "type": "number",
-          "default": 3,
-          "description": "Maximum directory depth to scan for git repositories"
-        },
-        "gitProjectsWelcome.gitPath": {
-          "type": "string",
-          "default": "git",
-          "description": "Path to the git executable (default: 'git' in PATH)"
-        }
-      }
-    }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
-  },
   "devDependencies": {
-    "@types/vscode": "^1.109.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "typescript-eslint": "^8.54.0",
-    "eslint": "^9.39.2",
-    "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "@types/node": "^25.3.0",
+    "typescript": "^5.9.3"
   }
 }

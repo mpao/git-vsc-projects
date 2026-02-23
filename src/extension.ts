@@ -1,3 +1,4 @@
+// @ts-ignore: vscode types are provided by the VS Code extension host during build/runtime
 import * as vscode from 'vscode';
 import { GitScanner } from './gitScanner';
 import { WebviewProvider } from './webviewProvider';
@@ -48,14 +49,11 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	// Watch for configuration changes
-	const configWatcher = vscode.workspace.onDidChangeConfiguration((event) => {
+	const configWatcher = vscode.workspace.onDidChangeConfiguration((event: vscode.ConfigurationChangeEvent) => {
 		if (event.affectsConfiguration('gitProjectsWelcome')) {
 			refreshProjectsList();
 		}
 	});
-
-	// Auto-open panel on activation
-	openWebviewPanel(context);
 
 	context.subscriptions.push(statusBarItem);
 	context.subscriptions.push(openPanelCmd);
@@ -85,7 +83,7 @@ function openWebviewPanel(context: vscode.ExtensionContext) {
 		webviewPanel = undefined;
 	});
 
-	webviewPanel.webview.onDidReceiveMessage((message) => {
+	webviewPanel.webview.onDidReceiveMessage((message: any) => {
 		switch (message.command) {
 			case 'openProject':
 				vscode.commands.executeCommand(

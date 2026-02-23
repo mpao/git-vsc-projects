@@ -24,17 +24,10 @@ echo ""
 echo "🔨 Compiling TypeScript..."
 npm run compile
 
-# Install vsce if not already installed
-if ! command -v vsce &> /dev/null; then
-    echo ""
-    echo "📦 Installing vsce (VS Code Extension Packager)..."
-    npm install -g @vscode/vsce
-fi
-
-# Package the extension
+# Package the extension (using npx to avoid global permission issues)
 echo ""
 echo "📦 Packaging extension..."
-vsce package
+npx @vscode/vsce package
 
 # Install the extension
 echo ""

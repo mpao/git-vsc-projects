@@ -36,18 +36,10 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-REM Install vsce if not already installed
-where vsce >nul 2>nul
-if %errorlevel% neq 0 (
-    echo.
-    echo 📦 Installing vsce (VS Code Extension Packager)...
-    call npm install -g @vscode/vsce
-)
-
-REM Package the extension
+REM Package the extension (using npx to avoid global permission issues)
 echo.
 echo 📦 Packaging extension...
-call vsce package
+call npx @vscode/vsce package
 if %errorlevel% neq 0 (
     echo ❌ Error: vsce package failed
     pause
