@@ -1,5 +1,7 @@
 # Git Projects Welcome
 
+An experimental vibe coding session with Copilot. The result is a VS Code extension for efficiently managing multiple git-based projects in one centralized, interactive interface.
+
 A VS Code extension that displays a welcome page listing git repositories from configured directories.
 
 ## Features
@@ -151,3 +153,9 @@ npm test
 ### 0.0.1
 
 Initial release with basic repository scanning and list display functionality.
+
+---
+
+## About This Project
+
+This extension was born from an experimental "vibe coding" session using GitHub Copilot. It demonstrates how AI-assisted development can rapidly prototype feature-rich VS Code extensions. The iterative feedback loop between developer and Copilot led to a clean, functional tool for managing multiple git projects efficiently.
