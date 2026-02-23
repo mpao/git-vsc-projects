@@ -12,6 +12,56 @@ A VS Code extension that displays a welcome page listing git repositories from c
 - 🖱️ **Click to Open**: Click on any repository to open it in VS Code
 - 🔧 **Custom Git Path**: Support for custom git executable locations
 
+## Installation
+
+### Quick Install (Automatic)
+
+#### Linux / macOS
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+#### Windows
+
+```batch
+install.bat
+```
+
+### Manual Installation
+
+1. **Clone or download this repository**
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Compile the extension**
+   ```bash
+   npm run compile
+   ```
+
+4. **Package the extension**
+   ```bash
+   npm install -g @vscode/vsce
+   vsce package
+   ```
+
+5. **Install in VS Code**
+   ```bash
+   code --install-extension git-projects-welcome-0.0.1.vsix
+   ```
+
+### Development Mode
+
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run compile` or `npm run watch` for continuous compilation
+4. Open the folder in VS Code
+5. Press `F5` to launch the extension in a debug window
+
 ## Configuration
 
 Add the following to your VS Code `settings.json`:
